@@ -28,7 +28,7 @@ In general, the naming convention used on this repository is filename with suffi
 <filename>.<type>.tsx or <filename>.<type>.ts
 ```
 
-For example, if we want to write a layout component it should be `main.layout.tsx`, so we will know that we have a **layout** named **general**.
+For example, if we want to write a layout component it should be `main.layout.tsx`, so we will know that we have a **layout** named **main**.
 
 For writing custom hooks, it should be written using camelCase format like `useCustomHooks.hooks.ts`
 
