@@ -1,34 +1,64 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Pokedex Dashboard
 
-## Getting Started
+A simple implementation of a Pokedex-alike app with a dashboard UI feel, built using Next.js and Chakra UI
 
-First, run the development server:
+### Build With
 
-```bash
-npm run dev
-# or
-yarn dev
+- [Next.js](https://nextjs.org)
+- [Chakra UI](https://chakra-ui.com)
+- [SWR](https://swr.vercel.app)
+- [PokeAPI](https://pokeapi.co)
+
+### Directory Structure
+
+- `/components` - Component that accept props without functionality 
+- `/containers` - Component that deliver props, included with functionality
+- `/hooks` - User-defined custom hooks
+- `/layouts` - User-defined layout component
+- `/libs` - Reusable local library
+- `/pages` - Pages that will rendered
+- `/pages/api` - User-defined serverless API
+- `/public` - Public assets (images, icons, etc.)
+- `/utils` - Custom functionality/helper
+
+### File Naming Convention
+
+In general, the naming convention used on this repository is filename with suffix for each directory: 
+```
+<filename>.<type>.tsx or <filename>.<type>.ts
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+For example, if we want to write a layout component it should be `main.layout.tsx`, so we will know that we have a **layout** named **general**.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+For writing custom hooks, it should be written using camelCase format like `useCustomHooks.hooks.ts`
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+#### Additional Info: Component/Container
+The component and container may look similar, I adopted the [Dumb Components and Smart Components](https://www.shade.codes/dumb-components-and-smart-components/) concept to separate component that rarely and frequently updated by props
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Installation
 
-## Learn More
+Clone the repo
 
-To learn more about Next.js, take a look at the following resources:
+```sh
+git clone https://github.com/technowizard/pokedex-dashboard.git
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+cd pokedex-dashboard
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Install packages and dependencies
 
-## Deploy on Vercel
+```sh
+yarn // or yarn install
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Make `.env` file on the root directory, or rename the `.env.example` and input the PokeAPI URL
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```
+NEXT_PUBLIC_POKEAPI_URL='POKEAPI_URL'
+```
+
+### Run the app in development mode
+
+```sh
+yarn dev
+```
